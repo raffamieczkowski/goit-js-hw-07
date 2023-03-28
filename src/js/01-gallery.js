@@ -1,16 +1,16 @@
-import { galleryItems } from "./gallery-items.js";
+import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const galleryEl = document.querySelector(".gallery");
 
-for (const image of galleryItems) {
+for (const img of galleryItems) {
   const listEl = `<div class="gallery__item">
-    <a class="gallery__link" href=${image.original}>
+    <a class="gallery__link" href=${img.original}>
       <img
         class="gallery__image"
-        src=${image.preview}
-        data-source=${image.original}
-        alt=${image.description}
+        src=${img.preview}
+        data-source=${img.original}
+        alt=${img.description}
       />
     </a>
   </div>`;
@@ -19,9 +19,6 @@ for (const image of galleryItems) {
 
 galleryEl.addEventListener("click", (event) => {
   event.preventDefault();
-  if (event.target.tagName !== "IMG") return;
-  const instance = basicLightbox.create(
-    `<img src="${event.target.dataset.source}">`
-  );
-  instance.show();
+  const box = basicLightbox.create(`<img src="${event.target.dataset.source}">`);
+  box.show();
 });
