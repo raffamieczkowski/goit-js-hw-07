@@ -1,4 +1,4 @@
-import { galleryItems } from './gallery-items.js';
+import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
 const galleryEl = document.querySelector(".gallery");
@@ -19,6 +19,8 @@ for (const img of galleryItems) {
 
 galleryEl.addEventListener("click", (event) => {
   event.preventDefault();
-  const box = basicLightbox.create(`<img src="${event.target.dataset.source}">`);
+  const box = basicLightbox.create(
+    `<img src="${event.target.dataset.source}">`
+  );
   box.show();
 });
